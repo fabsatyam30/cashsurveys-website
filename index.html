@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashSurveys - Premium Rewards for Your Opinions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .light-gradient-bg {
+            background-color: #f8f9fa;
+            background-image: radial-gradient(circle at 1% 1%, rgba(59, 130, 246, 0.07), transparent 30%), 
+                              radial-gradient(circle at 99% 99%, rgba(99, 102, 241, 0.07), transparent 40%);
+        }
+        .glass-header {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .cta-button {
+            background: linear-gradient(90deg, #3B82F6, #6366F1);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2), 0 2px 4px -2px rgba(59, 130, 246, 0.2);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25), 0 4px 6px -4px rgba(59, 130, 246, 0.25);
+        }
+        .app-store-btn {
+            transition: all 0.3s ease;
+        }
+        .app-store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
+        }
+        .app-store-btn.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .floating-card {
+            background-color: #ffffff;
+            border-radius: 1rem; /* 16px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f3f4f6;
+        }
+        .floating-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.07);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.6, 0.01, 0, 0.99), transform 0.8s cubic-bezier(0.6, 0.01, 0, 0.99);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="light-gradient-bg">
+
+    <!-- Header -->
+    <header class="glass-header fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO UPDATED HERE -->
+            <a href="#">
+                <img class="h-8 w-auto" src="Group 48097140.png" alt="CashSurveys Logo">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Home</a>
+                <a href="#how-it-works" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Process</a>
+                <a href="#features" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Features</a>
+                <a href="#testimonials" class="text-slate-600 hover:text-blue-600 transition-colors duration-300">Testimonials</a>
+            </nav>
+            <a href="#signup" class="hidden md:block cta-button text-white px-6 py-2.5 rounded-full font-semibold">Download App</a>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-slate-200/80">
+            <a href="#home" class="block py-2 text-slate-600 hover:text-blue-600">Home</a>
+            <a href="#how-it-works" class="block py-2 text-slate-600 hover:text-blue-600">Process</a>
+            <a href="#features" class="block py-2 text-slate-600 hover:text-blue-600">Features</a>
+            <a href="#testimonials" class="block py-2 text-slate-600 hover:text-blue-600">Testimonials</a>
+            <a href="#signup" class="block mt-4 cta-button text-white px-5 py-3 rounded-full font-semibold text-center">Download App</a>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-40 pb-28 overflow-hidden">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-4 reveal">Shape the Future.</h1>
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 reveal brand-gradient-text" style="transition-delay: 100ms;">Get Rewarded Today.</h2>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 reveal" style="transition-delay: 200ms;">Join an exclusive community of thinkers and influencers. Your opinions power the world's leading brands, and we believe in rewarding you for it.</p>
+                <div class="flex justify-center items-center gap-4 flex-wrap reveal" style="transition-delay: 300ms;">
+                    <a href="#" class="app-store-btn bg-slate-800 text-white py-3 px-6 rounded-lg flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M17.482 10.031c-.13-.021-.26-.031-.393-.031-1.294 0-2.344 1.05-2.344 2.344s1.05 2.344 2.344 2.344c.133 0 .263-.01.393-.031.426.688.944 1.25 1.528 1.688l-3.32 3.32c-.76.76-1.374 1.354-1.82 1.76l-.01.01c-.822.74-1.822 1.156-2.874 1.156-1.01 0-1.94-.385-2.65-1.094-.79-.79-.968-1.927-.51-2.937.2-.438.48-.834.812-1.188l3.96-3.958c.676-.677.74-1.77.155-2.521-.604-.77-1.718-.844-2.48-.23-1.124.9-2.01 2.01-2.582 3.291-.345.76-.927 1.302-1.636 1.583C1.48 15.688.5 14.71.5 13.563c0-.98.646-1.823 1.542-2.136.656-.229 1.28-.698 1.73-1.333.822-1.146 1.458-2.386 1.886-3.698C6.083 5.302 7.02.5 9.47.5c1.292 0 2.344 1.052 2.344 2.344 0 1.052-.708 1.948-1.677 2.24l-1.115.333c-.583.177-1.02.688-1.135 1.281-.13.677.21 1.344.79 1.781l3.96 3.96c.677.677 1.77.74 2.52.156.77-.604.844-1.718.23-2.48-.02-.02-.04-.05-.05-.07C15.9 11.406 16.51 10.5 17.482 10.031zM22.49 6.875c-1.01 0-1.885.698-2.2 1.635-.334-.083-.677-.135-1.031-.135-1.823 0-3.313 1.49-3.313 3.313s1.49 3.313 3.313 3.313c.354 0 .698-.052 1.031-.135.313.938 1.198 1.635 2.2 1.635 1.29 0 2.344-1.052 2.344-2.344s-1.053-2.344-2.344-2.344c-.06 0-.13.01-.18.02-.3-.885-1.13-1.52-2.12-1.52-.01 0-.01 0-.02 0 .99-.02 1.81-.84 1.81-1.83 0-1.01-.82-1.83-1.83-1.83z"/></svg>
+                        <div>
+                            <span class="text-xs text-slate-300">GET IT ON</span>
+                            <p class="font-semibold text-lg -mt-1">Google Play</p>
+                        </div>
+                    </a>
+                    <a href="#" class="app-store-btn disabled bg-slate-200 text-slate-800 py-3 px-6 rounded-lg flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.663 11.423c.093-.65-.234-1.363-.723-1.852-.8-.8-2.07-.84-2.92-.08-.75.67-1.22 1.67-1.45 2.65.3-.08.6-.13.92-.13 1.5 0 2.72 1.22 2.72 2.72s-1.22 2.72-2.72 2.72c-.32 0-.62-.05-.92-.13.23.98.7 1.98 1.45 2.65.85.76 2.12.72 2.92-.08.49-.49.816-1.203.723-1.852-.1-.73.32-1.35.95-1.58.63-.23.98-.85.88-1.48-.1-.63-.6-1.08-1.22-1.18-.62-.1-.97-.6-.88-1.23zM12.253.333c-2.924 0-4.346 1.74-5.496 3.44-.33.49-.63.99-.89 1.5-.33.64-.62 1.3-.82 2.01-.46 1.63-.46 3.4 0 5.03.2.71.49 1.37.82 2.01.26.51.56 1.01.89 1.5 1.15 1.7 2.572 3.44 5.496 3.44 1.54 0 2.97-.78 3.82-2.02.8-.23 1.61-.23 2.41 0 .85 1.24 2.28 2.02 3.82 2.02 2.924 0 4.346-1.74 5.496-3.44.33-.49.63-.99-.89-1.5.33-.64.62-1.3.82-2.01.46-1.63.46-3.4 0 5.03-.2-.71-.49-1.37-.82-2.01-.26-.51-.56-1.01-.89-1.5-1.15-1.7-2.572-3.44-5.496-3.44-1.54 0-2.97.78-3.82 2.02-.8-.23-1.61-.23-2.41 0C15.223 1.113 13.793.333 12.253.333z"/></svg>
+                        <div>
+                            <span class="text-xs text-slate-500">Coming soon on the</span>
+                            <p class="font-semibold text-lg -mt-1">App Store</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 reveal">A Seamless Process</h2>
+                    <p class="text-slate-600 mt-3 text-lg reveal" style="transition-delay: 100ms;">From sign-up to payout, everything is designed for you.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12 text-center">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center reveal">
+                        <div class="bg-blue-100 text-blue-600 rounded-2xl h-20 w-20 flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg></div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">1. Quick Sign-Up</h3>
+                        <p class="text-slate-600">Create your secure profile in under 60 seconds. We only ask for what's necessary.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center reveal" style="transition-delay: 150ms;">
+                        <div class="bg-blue-100 text-blue-600 rounded-2xl h-20 w-20 flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">2. Take Curated Surveys</h3>
+                        <p class="text-slate-600">Access surveys matched to your profile. No time-wasting, only relevant opportunities.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center reveal" style="transition-delay: 300ms;">
+                        <div class="bg-blue-100 text-blue-600 rounded-2xl h-20 w-20 flex items-center justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">3. Instant Payout</h3>
+                        <p class="text-slate-600">Redeem your earnings instantly via PayPal or a wide selection of premium gift cards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 reveal">An Unmatched Experience</h2>
+                    <p class="text-slate-600 mt-3 text-lg reveal" style="transition-delay: 100ms;">We obsess over the details that matter to you.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 floating-card text-center reveal">
+                        <div class="flex justify-center items-center h-16 w-16 mx-auto mb-6 bg-blue-50 rounded-full">
+                            <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12a9.5 9.5 0 1 1-9.5-9.5 9.5 9.5 0 0 1 9.5 9.5z"></path><path d="M12 8v4l2 2"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Total Flexibility</h3><p class="text-slate-600">Your time, your rules. Earn whenever and wherever you choose.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="p-8 floating-card text-center reveal" style="transition-delay: 100ms;">
+                        <div class="flex justify-center items-center h-16 w-16 mx-auto mb-6 bg-blue-50 rounded-full">
+                            <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Premium Opportunities</h3><p class="text-slate-600">Gain access to exclusive surveys from innovative global brands.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="p-8 floating-card text-center reveal" style="transition-delay: 200ms;">
+                        <div class="flex justify-center items-center h-16 w-16 mx-auto mb-6 bg-blue-50 rounded-full">
+                             <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Transparent Earnings</h3><p class="text-slate-600">Know exactly how much you'll earn before you start any survey.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="p-8 floating-card text-center reveal">
+                        <div class="flex justify-center items-center h-16 w-16 mx-auto mb-6 bg-blue-50 rounded-full">
+                            <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Ironclad Security</h3><p class="text-slate-600">We use bank-level encryption to protect your data and privacy.</p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="p-8 floating-card text-center reveal" style="transition-delay: 100ms;">
+                        <div class="flex justify-center items-center h-16 w-16 mx-auto mb-6 bg-blue-50 rounded-full">
+                             <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Rapid Payouts</h3><p class="text-slate-600">Low cash-out thresholds and lightning-fast payment processing.</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="p-8 floating-card text-center reveal" style="transition-delay: 200ms;">
+                        <div class="flex justify-center items-center h-16 w-16 mx-auto mb-6 bg-blue-50 rounded-full">
+                            <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Dedicated Support</h3><p class="text-slate-600">Our 24/7 member support team is always here to help you succeed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 reveal">Trusted by Our Members</h2>
+                    <p class="text-slate-600 mt-3 text-lg reveal" style="transition-delay: 100ms;">Don't just take our word for it.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="p-8 bg-slate-50 rounded-xl reveal">
+                        <p class="text-slate-600 mb-6 italic">"CashSurveys is on another level. The interface is beautiful, the surveys are actually interesting, and I got my first payout the same day. Seriously impressive."</p>
+                        <div class="flex items-center"><img class="w-12 h-12 rounded-full mr-4 border-2 border-blue-200" src="https://placehold.co/100x100/e0f2fe/1e293b?text=AS" alt="User Avatar"><div><p class="font-bold text-slate-800">Alex S.</p><p class="text-sm text-slate-500">Product Designer</p></div></div>
+                    </div>
+                    <div class="p-8 bg-slate-50 rounded-xl reveal" style="transition-delay: 150ms;">
+                        <p class="text-slate-600 mb-6 italic">"I've finally found a survey platform that respects my time. No more getting screened out after 10 minutes. The quality here is just so much higher."</p>
+                        <div class="flex items-center"><img class="w-12 h-12 rounded-full mr-4 border-2 border-blue-200" src="https://placehold.co/100x100/e0f2fe/1e293b?text=CD" alt="User Avatar"><div><p class="font-bold text-slate-800">Chloe D.</p><p class="text-sm text-slate-500">Marketing Manager</p></div></div>
+                    </div>
+                    <div class="p-8 bg-slate-50 rounded-xl reveal" style="transition-delay: 300ms;">
+                        <p class="text-slate-600 mb-6 italic">"It feels like a premium product, and the fast payouts back that up. This is the only survey site I use now. So clean and easy to navigate."</p>
+                        <div class="flex items-center"><img class="w-12 h-12 rounded-full mr-4 border-2 border-blue-200" src="https://placehold.co/100x100/e0f2fe/1e293b?text=MJ" alt="User Avatar"><div><p class="font-bold text-slate-800">Marcus J.</p><p class="text-sm text-slate-500">Tech Enthusiast</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="signup" class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 reveal">Get Started Today</h2>
+                 <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 100ms;">Download the app and start earning what you're worth. Sign up now and receive a $5 bonus on your first survey.</p>
+                 <div class="flex justify-center items-center gap-4 flex-wrap reveal" style="transition-delay: 200ms;">
+                    <a href="#" class="app-store-btn bg-slate-800 text-white py-3 px-6 rounded-lg flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M17.482 10.031c-.13-.021-.26-.031-.393-.031-1.294 0-2.344 1.05-2.344 2.344s1.05 2.344 2.344 2.344c.133 0 .263-.01.393-.031.426.688.944 1.25 1.528 1.688l-3.32 3.32c-.76.76-1.374 1.354-1.82 1.76l-.01.01c-.822.74-1.822 1.156-2.874 1.156-1.01 0-1.94-.385-2.65-1.094-.79-.79-.968-1.927-.51-2.937.2-.438.48-.834.812-1.188l3.96-3.958c.676-.677.74-1.77.155-2.521-.604-.77-1.718-.844-2.48-.23-1.124.9-2.01 2.01-2.582 3.291-.345.76-.927 1.302-1.636 1.583C1.48 15.688.5 14.71.5 13.563c0-.98.646-1.823 1.542-2.136.656-.229 1.28-.698 1.73-1.333.822-1.146 1.458-2.386 1.886-3.698C6.083 5.302 7.02.5 9.47.5c1.292 0 2.344 1.052 2.344 2.344 0 1.052-.708 1.948-1.677 2.24l-1.115.333c-.583.177-1.02.688-1.135 1.281-.13.677.21 1.344.79 1.781l3.96 3.96c.677.677 1.77.74 2.52.156.77-.604.844-1.718.23-2.48-.02-.02-.04-.05-.05-.07C15.9 11.406 16.51 10.5 17.482 10.031zM22.49 6.875c-1.01 0-1.885.698-2.2 1.635-.334-.083-.677-.135-1.031-.135-1.823 0-3.313 1.49-3.313 3.313s1.49 3.313 3.313 3.313c.354 0 .698-.052 1.031-.135.313.938 1.198 1.635 2.2 1.635 1.29 0 2.344-1.052 2.344-2.344s-1.053-2.344-2.344-2.344c-.06 0-.13.01-.18.02-.3-.885-1.13-1.52-2.12-1.52-.01 0-.01 0-.02 0 .99-.02 1.81-.84 1.81-1.83 0-1.01-.82-1.83-1.83-1.83z"/></svg>
+                        <div>
+                            <span class="text-xs text-slate-300">GET IT ON</span>
+                            <p class="font-semibold text-lg -mt-1">Google Play</p>
+                        </div>
+                    </a>
+                    <a href="#" class="app-store-btn disabled bg-slate-200 text-slate-800 py-3 px-6 rounded-lg flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M18.663 11.423c.093-.65-.234-1.363-.723-1.852-.8-.8-2.07-.84-2.92-.08-.75.67-1.22 1.67-1.45 2.65.3-.08.6-.13.92-.13 1.5 0 2.72 1.22 2.72 2.72s-1.22 2.72-2.72 2.72c-.32 0-.62-.05-.92-.13.23.98.7 1.98 1.45 2.65.85.76 2.12.72 2.92-.08.49-.49.816-1.203.723-1.852-.1-.73.32-1.35.95-1.58.63-.23.98-.85.88-1.48-.1-.63-.6-1.08-1.22-1.18-.62-.1-.97-.6-.88-1.23zM12.253.333c-2.924 0-4.346 1.74-5.496 3.44-.33.49-.63.99-.89 1.5-.33.64-.62 1.3-.82 2.01-.46 1.63-.46 3.4 0 5.03.2.71.49 1.37.82 2.01.26.51.56 1.01.89 1.5 1.15 1.7 2.572 3.44 5.496 3.44 1.54 0 2.97-.78 3.82-2.02.8-.23 1.61-.23 2.41 0 .85 1.24 2.28 2.02 3.82 2.02 2.924 0 4.346-1.74 5.496-3.44.33-.49.63-.99-.89-1.5.33-.64.62-1.3.82-2.01.46-1.63.46-3.4 0 5.03-.2-.71-.49-1.37-.82-2.01-.26-.51-.56-1.01-.89-1.5-1.15-1.7-2.572-3.44-5.496-3.44-1.54 0-2.97.78-3.82 2.02-.8-.23-1.61-.23-2.41 0C15.223 1.113 13.793.333 12.253.333z"/></svg>
+                        <div>
+                            <span class="text-xs text-slate-500">Coming soon on the</span>
+                            <p class="font-semibold text-lg -mt-1">App Store</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-6 text-center">
+            <!-- LOGO UPDATED HERE -->
+            <a href="#">
+                <img class="h-8 w-auto mx-auto mb-4" src="https://i.imgur.com/r5yL4tH.png" alt="CashSurveys Logo">
+            </a>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-blue-600 transition-colors">Privacy Policy</a>
+                <a href="terms.html" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-blue-600 transition-colors">Terms of Service</a>
+                <a href="mailto:info@cashsurveys.io" class="text-slate-600 hover:text-blue-600 transition-colors">Contact Us</a>
+            </div>
+            <p class="text-slate-500 text-sm">&copy; 2024 CashSurveys. All Rights Reserved. Built for the modern influencer.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth < 768) { // md breakpoint
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // --- Scroll Animations ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
