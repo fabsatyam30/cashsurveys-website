@@ -4,43 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - CashSurveys</title>
-
-    <!-- FAVICON ADDED HERE -->
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Manrope', sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
+        .policy-content h2 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-top: 3.5rem;
+            margin-bottom: 1.25rem;
+            color: #1a202c;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+        .policy-content h3 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+        }
+        .policy-content p {
+            margin-bottom: 1.25rem;
+        }
+        .policy-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .policy-content li {
+            margin-bottom: 0.6rem;
+        }
+        .address-block {
+            background-color: #f1f5f9;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            margin-top: 3rem;
+        }
+        .legal-highlight {
+            font-weight: 700;
+            color: #1a202c;
+        }
+        .box {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .warning-box { background-color: #fff5f5; border-left: 5px solid #f56565; color: #742a2a; }
+        .info-box { background-color: #ebf8ff; border-left: 5px solid #3182ce; color: #2a4365; }
+        .success-box { background-color: #f0fff4; border-left: 5px solid #48bb78; color: #22543d; }
     </style>
 </head>
 <body>
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html">
                 <img class="h-8 w-auto" src="Group 48097140.png" alt="CashSurveys Logo">
             </a>
-            <a href="index.html" class="text-blue-600 hover:underline">Back to Home</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium">Home</a>
+                <a href="privacy.html" class="text-slate-600 hover:text-blue-600 font-medium">Privacy</a>
+            </nav>
         </div>
     </header>
+
     <main class="py-16">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <!-- Corrected Termly script for Terms of Service -->
-            <div name="termly-embed" data-id="10ef3f52-0921-4075-a91d-0c44cbd7a0d8"></div>
-            <script type="text/javascript">(function(d, s, id) {
-              var js, tjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "https://app.termly.io/embed-policy.min.js";
-              tjs.parentNode.insertBefore(js, tjs);
-            }(document, 'script', 'termly-jssdk'));</script>
+        <div class="container mx-auto px-6 max-w-4xl bg-white p-8 md:p-14 rounded-3xl shadow-sm border border-gray-100">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">Terms of Service</h1>
+            <p class="text-slate-500 mb-10 font-medium border-b pb-6">Effective Date: November 10, 2020 | Last Comprehensive Update: January 23, 2026</p>
+
+            <div class="policy-content text-gray-700">
+                <p>Welcome to <strong>CashSurveys</strong>. This document constitutes a legally binding agreement between you and <span class="legal-highlight">Adnexus Private Limited</span> ("Adnexus," "Company," "we," "us," or "our"). By downloading, accessing, or using the CashSurveys application or website (the "Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+
+                <div class="info-box box">
+                    <strong>Service Nature:</strong> CashSurveys is a market research facilitation platform. We connect independent users ("Members") with global brands and research firms ("Partners") seeking consumer insights. We act as a technology intermediary; we do not employ our Members.
+                </div>
+
+                <h2>1. Membership & Eligibility Requirements</h2>
+                <p>To register for an account and participate in the Service, you must meet and maintain the following criteria:</p>
+                <ul>
+                    <li><strong>Age Requirement:</strong> You must be at least 18 years of age. If you are a minor, you are strictly prohibited from using the Service.</li>
+                    <li><strong>Human Interaction:</strong> Use of the Service is limited to natural persons. Any use of "bots," scripts, emulators, or automated account creation tools is a violation of these Terms.</li>
+                    <li><strong>Geographic Validity:</strong> You must reside in a region where the Service is legally available. Accessing the Service from restricted territories via VPN is prohibited.</li>
+                    <li><strong>Good Standing:</strong> You must not have been previously banned, suspended, or had an account terminated by Adnexus for any reason.</li>
+                </ul>
+
+                <h2>2. User Integrity & Anti-Fraud Policy</h2>
+                <p>The value of our Service depends on the quality of data provided to our Partners. We maintain a zero-tolerance policy toward fraudulent activity.</p>
+                
+                <div class="warning-box box">
+                    <strong>Strict Single Account Policy:</strong> Each individual is permitted to operate exactly ONE (1) account. We utilize advanced fingerprinting, IP analysis, and behavioral tracking to identify duplicate accounts. Detection of multiple accounts will lead to the immediate termination of all linked accounts and the permanent forfeiture of all accumulated rewards.
+                </div>
+
+                <h3>Prohibited Conduct</h3>
+                <p>You agree not to engage in any of the following activities:</p>
+                <ul>
+                    <li>Using <strong>VPNs, Proxies, Tor</strong>, or any location-masking software.</li>
+                    <li>Using <strong>Artificial Intelligence (AI)</strong>, ChatGPT, or automated scripts to generate survey responses.</li>
+                    <li>Providing false demographic information (e.g., claiming to live in a different city or hold a different job) to qualify for more surveys.</li>
+                    <li>"Speeding" through surveys without reading the questions. Our Partners utilize hidden "trap questions" and response timers to detect inattentive behavior.</li>
+                    <li>Sharing, recording, or publishing survey content, screenshots, or internal rewards logic publicly or on social media.</li>
+                </ul>
+
+                <h2>3. Survey Quality & Disqualifications</h2>
+                <p>Partners provide surveys based on specific target demographics. Not every Member will be eligible for every survey.</p>
+                <ul>
+                    <li><strong>Screen-outs:</strong> You may be disqualified from a survey after answering a few "qualifying questions" if you do not fit the target audience. Disqualifications are determined solely by the Partner. No reward is due for disqualified survey attempts.</li>
+                    <li><strong>Response Validation:</strong> Even after completing a survey, your reward is "Pending" until the Partner validates the quality of your data. Validation may take 24 hours to 30 days.</li>
+                    <li><strong>Partner Discretion:</strong> Our Partners have the final authority to reject any survey response they deem to be of low quality, fraudulent, or inconsistent.</li>
+                </ul>
+
+                <h2>4. Virtual Credits & Rewards Program</h2>
+                <p>Rewards earned through the Service are credited to your account as <strong>Virtual Credits</strong>.</p>
+                <ul>
+                    <li><strong>No Cash Value:</strong> Virtual Credits are not legal tender, do not constitute property, and have no value outside of the Service. They are only "valuable" once a valid redemption request is approved.</li>
+                    <li><strong>Redemption Thresholds:</strong> You may only request a payout once your balance meets the minimum threshold specified in the application.</li>
+                    <li><strong>Identity Verification (KYC):</strong> To prevent money laundering and fraud, we reserve the right to require <strong>government-issued ID verification</strong> or phone verification before processing any redemption request.</li>
+                    <li><strong>Inactivity Forfeiture:</strong> To maintain system efficiency, accounts that remain inactive (no successful login) for <strong>180 consecutive days</strong> will be closed, and any remaining balance will be forfeited.</li>
+                </ul>
+
+                <h2>5. Intellectual Property</h2>
+                <p>All content included in the Service, such as text, graphics, logos, images, and software, is the property of <span class="legal-highlight">Adnexus Private Limited</span> or its Partners and is protected by copyright and intellectual property laws. You may not copy, modify, distribute, or reverse-engineer any part of the Service or our trademarks.</p>
+
+                <h2>6. Connectivity, Devices & Roaming</h2>
+                <p>The Service requires a stable internet connection. You are solely responsible for all data, SMS, and roaming charges incurred through your mobile carrier. We are not responsible for rewards lost due to connection drops or device battery failure.</p>
+                <p><strong>Device Security:</strong> We strongly advise against using the Service on "Rooted" or "Jailbroken" devices. Such modifications can lead to tracking failures and security vulnerabilities for which we are not liable.</p>
+
+                <h2>7. Limitation of Liability & Indemnification</h2>
+                <p>To the maximum extent permitted by law, Adnexus Private Limited shall not be liable for any indirect, incidental, special, or consequential damages, including loss of profits or data, arising out of your use of the Service. You agree to indemnify and hold Adnexus harmless from any claims or legal fees resulting from your violation of these Terms.</p>
+
+                <h2>8. Account Deletion & Data Removal</h2>
+                <p>If you wish to permanently terminate your account, you must send a request from your registered email to <span class="legal-highlight">info@cashsurveys.io</span>. As per our Privacy Policy, your account and associated personal data will be purged from our active systems within <strong>30 days</strong> of verification. Forfeited rewards cannot be reinstated once deletion is processed.</p>
+
+                <h2>9. Dispute Resolution & Arbitration</h2>
+                <p>This Agreement is governed by the laws of India. Any dispute, controversy, or claim arising out of these Terms shall be settled by binding arbitration in <strong>Noida, Uttar Pradesh</strong>, in accordance with the Arbitration and Conciliation Act, 1996. The language of arbitration shall be English.</p>
+
+                <h2>10. Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes by posting the updated version within the Service. Your continued use of CashSurveys after such changes constitutes your acceptance of the new Terms.</p>
+
+                <h2>11. Contact Us</h2>
+                <div class="address-block">
+                    <p class="font-bold text-gray-900 mb-1">Adnexus Private Limited</p>
+                    <p class="text-slate-600 mb-1">Grand Omaxe, Sector 93B</p>
+                    <p class="text-slate-600 mb-3">Noida, 201304, India</p>
+                    <p class="font-bold text-blue-600">Compliance & Member Support: info@cashsurveys.io</p>
+                </div>
+            </div>
         </div>
     </main>
+
+    <footer class="py-12 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2026 CashSurveys. All Rights Reserved. Adnexus Private Limited.</p>
+        </div>
+    </footer>
 </body>
 </html>
